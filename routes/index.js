@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 
 /* GET beranda page */
 router.get('/beranda', function (req, res, next) {
-  res.render('beranda', { title: 'Beranda' });
+  res.render('beranda', { title: 'Beranda' }); 
 });
 
 /* GET beranda page */
