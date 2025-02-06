@@ -1,0 +1,103 @@
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+    <!-- Logo and Title -->
+    <div class="mb-10 text-center">
+        <h1 class="text-4xl font-bold">Edit Kwitansi</h1>
+    </div>
+
+    <!-- Form Card -->
+    <div class="max-w-xl mx-auto">
+        <div class="bg-white border border-black border-opacity-20 rounded-xl shadow-sm p-6 dark:bg-gray-800 dark:border-gray-700">
+            <form id="editForm">
+                <!-- No Bukti -->
+                <div class="mb-4">
+                    <label for="noBukti" class="block text-sm font-medium mb-2 dark:text-white">No Bukti</label>
+                    <input type="text" id="noBukti" name="noBukti" value="00001"
+                        class="py-3 px-4 block w-full border border-gray-200 rounded-lg text-sm focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+                </div>
+
+                <!-- Untuk Pembayaran -->
+                <div class="mb-4">
+                    <label for="judul" class="block text-sm font-medium mb-2 dark:text-white">Untuk Pembayaran</label>
+                    <input type="text" id="judul" name="judul" value="Biaya Pengadaan ARK Belanja Barang Persediaan Barang Konsumsi di BPS Kota Padang Tahun Anggaran 2024"
+                        class="py-3 px-4 block w-full border border-gray-200 rounded-lg text-sm focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+                </div>
+
+                <!-- Tanggal -->
+                <div class="mb-4">
+                    <label for="tanggalMulai" class="block text-sm font-medium mb-2">Tanggal</label>
+                    <input type="date" id="tanggalMulai" name="tanggalMulai" value="2024-02-26"
+                        class="py-3 px-4 block w-full border border-gray-200 rounded-lg text-sm focus:ring-blue-500">
+                </div>
+
+                <!-- Jumlah Uang -->
+                <div class="mb-4">
+                    <label for="jumlahUang" class="block text-sm font-medium mb-2 dark:text-white">Jumlah Uang</label>
+                    <input type="text" id="jumlahUang" name="jumlahUang" value="Rp 644.500,00"
+                        class="py-3 px-4 block w-full border border-gray-200 rounded-lg text-sm focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400">
+                </div>
+
+                <!-- Dokumen -->
+                <div class="mb-6">
+                    <label for="Dokumen" class="block text-sm font-medium mb-2">Dokumen</label>
+                    <div class="flex items-center gap-3 max-w-full overflow-hidden">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" width="40" alt="PDF Icon">
+                        <a id="fileName" href="detail" class="text-blue-600 hover:underline truncate max-w-[calc(100%-50px)]">
+                            KUINTANSI_00059-Biaya_Pengadaan_ARK_Belanja_Barang_Persediaan_Barang_Konsumsi_2024.pdf
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Button Group -->
+                <div class="grid grid-cols-2 gap-4 mt-6">
+                    <button type="button" onclick="window.history.back()"
+                        class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-lg border border-gray-200 font-medium text-gray-800 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all dark:border-gray-700 dark:text-gray-300 dark:hover:bg-slate-800 dark:hover:text-white dark:focus:ring-offset-gray-800" href="#">
+                        Batal
+                    </button>
+                    <button type="submit"
+                        class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-lg border border-transparent font-medium bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800" href="#">
+                        Simpan
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Pop-Up Modal -->
+<div id="popupModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg shadow-lg p-6 max-w-sm w-full text-center flex flex-col items-center gap-4">
+        <!-- Gambar -->
+        <img 
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/7bc622660ad872f51889a3d59aa6529e02f11ba04b4d58676ffc1a35e22d6719?placeholderIfAbsent=true&apiKey=b968644d66b542249f51acc2390675a8"
+            class="object-contain max-w-[120px] aspect-square"
+            alt="Success icon"
+        >
+        
+        <!-- Pesan -->
+        <p class="text-lg font-semibold text-gray-800">
+            Data berhasil disimpan!
+        </p>
+        
+        <!-- Tombol -->
+        <button id="closePopup" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg shadow-md">
+            Tutup
+        </button>
+    </div>
+</div>
+
+
+
+<script>
+    const popupModal = document.getElementById("popupModal");
+    const closePopup = document.getElementById("closePopup");
+
+    document.getElementById("editForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        popupModal.classList.remove("hidden");
+    });
+
+    closePopup.addEventListener("click", function () {
+        popupModal.classList.add("hidden");
+    });
+</script>

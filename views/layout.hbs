@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
     <script src="https://cdn.tailwindcss.com"></script> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    
 </head>
 <body class="bg-gray-100">
-    <header class="flex items-center p-4 bg-white shadow-md">
+    <header class="fixed top-0 w-full z-50 flex items-center p-4 bg-white shadow-md">
         <div class="flex gap-2 items-center h-[88px] w-[217px] max-md:h-[73px] max-md:w-[180px] max-sm:h-[61px] max-sm:w-[150px]">
             <div>
                 <svg id="0" width="73" height="85" viewBox="0 0 73 85" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-icon">
@@ -21,9 +23,10 @@
                 <div class="mt-0 text-2xl font-black text-black max-md:text-xl max-sm:-mt-3.5 max-sm:text-lg">WorkDrive</div>
             </div>
         </div>
+        
     </header>
     
-    <main class="p-6">
+    <main class="p-6 pt-[130px]">
         {{{body}}}
     </main>
 </body>

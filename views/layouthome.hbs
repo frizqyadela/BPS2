@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    
+</head>
+<body class="bg-gray-100">
+    <header class="fixed top-0 w-full z-50 flex items-center p-4 bg-white shadow-md">
+        <div class="flex gap-2 items-center h-[88px] w-[217px] max-md:h-[73px] max-md:w-[180px] max-sm:h-[61px] max-sm:w-[150px]">
+            <div>
+                <svg id="0" width="73" height="85" viewBox="0 0 73 85" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-icon">
+                    <path d="M26.9364 30.9558C26.7284 22.8739 18.1996 12.6552 17.5147 12.5221C15.1987 18.9611 12.9351 23.0169 8.09305 28.9076C3.25105 34.7983 1.30064 39.012 0.583024 43.2449C-0.134596 47.4779 -0.507888 50.3076 1.4023 55.5341C3.02442 59.9724 9.32198 64.6827 9.32198 64.6827C9.93024 62.0323 16.419 52.3337 19.1533 49.253C23.9349 43.8656 27.1362 38.7183 26.9364 30.9558Z" fill="#2D95C9" ></path>
+                    <path d="M43.218 10.0926C36.1034 6.25302 22.9962 8.56898 22.54 9.09687C26.9739 14.3089 29.3665 18.2901 32.0683 25.4207C34.7701 32.5513 37.4554 36.3393 40.7705 39.0673C44.0857 41.7954 46.3548 43.5267 51.8391 44.4694C56.4963 45.2698 63.7149 42.1495 63.7149 42.1495C61.7183 40.3036 56.5321 29.8502 55.2197 25.9458C52.9245 19.1179 50.0515 13.7805 43.218 10.0926Z" fill="#75B547" ></path>
+                    <path d="M25.9178 51.5512C19.048 55.8134 14.5375 68.336 14.7685 68.9943C21.4956 67.7404 26.1393 67.6451 33.6691 68.8481C41.1989 70.0511 45.8208 69.6058 49.8364 68.0868C53.852 66.5678 56.4827 65.4605 60.0284 61.1717C63.0393 57.5297 63.9231 49.7153 63.9231 49.7153C61.3285 50.5292 49.6805 49.8287 45.6405 49.0251C38.5755 47.62 32.5162 47.4574 25.9178 51.5512Z" fill="#E18939" ></path>
+                </svg>
+            </div>
+            <div class="flex flex-col items-start">
+                <div class="text-4xl font-black text-black max-md:text-3xl max-sm:text-3xl">BPS</div>
+                <div class="mt-0 text-2xl font-black text-black max-md:text-xl max-sm:-mt-3.5 max-sm:text-lg">WorkDrive</div>
+            </div>
+        </div>
+        
+    </header>
+    
+    <main class="p-6 pt-[130px]">
+        {{{body}}}
+    </main>
+</body>
+<!-- Footer -->
+    <footer class="bg-blue-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-2">
+                        <svg id="0" width="50" height="60" viewBox="0 0 73 85" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-icon">
+                            <path d="M26.9364 30.9558C26.7284 22.8739 18.1996 12.6552 17.5147 12.5221C15.1987 18.9611 12.9351 23.0169 8.09305 28.9076C3.25105 34.7983 1.30064 39.012 0.583024 43.2449C-0.134596 47.4779 -0.507888 50.3076 1.4023 55.5341C3.02442 59.9724 9.32198 64.6827 9.32198 64.6827C9.93024 62.0323 16.419 52.3337 19.1533 49.253C23.9349 43.8656 27.1362 38.7183 26.9364 30.9558Z" fill="#2D95C9"></path>
+                            <path d="M43.218 10.0926C36.1034 6.25302 22.9962 8.56898 22.54 9.09687C26.9739 14.3089 29.3665 18.2901 32.0683 25.4207C34.7701 32.5513 37.4554 36.3393 40.7705 39.0673C44.0857 41.7954 46.3548 43.5267 51.8391 44.4694C56.4963 45.2698 63.7149 42.1495 63.7149 42.1495C61.7183 40.3036 56.5321 29.8502 55.2197 25.9458C52.9245 19.1179 50.0515 13.7805 43.218 10.0926Z" fill="#75B547"></path>
+                            <path d="M25.9178 51.5512C19.048 55.8134 14.5375 68.336 14.7685 68.9943C21.4956 67.7404 26.1393 67.6451 33.6691 68.8481C41.1989 70.0511 45.8208 69.6058 49.8364 68.0868C53.852 66.5678 56.4827 65.4605 60.0284 61.1717C63.0393 57.5297 63.9231 49.7153 63.9231 49.7153C61.3285 50.5292 49.6805 49.8287 45.6405 49.0251C38.5755 47.62 32.5162 47.4574 25.9178 51.5512Z" fill="#E18939"></path>
+                        </svg>
+                        <div class="flex flex-col">
+                            <div class="text-2xl font-black text-white max-md:text-xl max-sm:text-lg">BPS</div>
+                            <div class="mt-0 text-lg font-black text-white max-md:text-base max-sm:text-sm">WorkDrive</div>
+                        </div>
+                    </div>
+                    <p class="text-sm mt-3">
+                        Platform penyimpanan dan manajemen dokumen yang aman, terorganisir, dan mudah digunakan.
+                    </p>
+                </div>
+
+                <!-- Website Links -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">WEBSITE</h4>
+                    <ul>
+    <li>
+        <a href="https://instagram.com/thisis.annisa/" target="_blank" class="flex items-center space-x-2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="w-5 h-5">
+            <span>Annisa Nurul Hakim</span>
+        </a>
+    </li>
+    <li>
+        <a href="https://instagram.com/frizqyadela" target="_blank" class="flex items-center space-x-2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="w-5 h-5">
+            <span>Frizqya Dela Pratiwi</span>
+        </a>
+    </li>
+    <li>
+        <a href="https://instagram.com/benni_chaniago28/" target="_blank" class="flex items-center space-x-2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="w-5 h-5">
+            <span>Benni Putra Chaniago</span>
+        </a>
+    </li>
+    <li>
+        <a href="https://instagram.com/mralghifr_" target="_blank" class="flex items-center space-x-2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="w-5 h-5">
+            <span>Muhammad Raihan Alghifari</span>
+        </a>
+    </li>
+    <li>
+        <a href="https://instagram.com/feyyy_fz" target="_blank" class="flex items-center space-x-2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="w-5 h-5">
+            <span>Faiz Hadyan</span>
+        </a>
+    </li>
+</ul>
+
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4">CONTACT US</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>Mailbox: bps1371@bps.go.id</li>
+                        <li>Telp. (0751) 498515</li>
+                        <li>
+                            Jl. By Pass KM. 13 Kel. Sungai Sapih Kec. Kuranji
+                            Padang 25159
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-blue-700 mt-8 pt-8 text-center text-sm">
+                <p>We're part of Badan Pusat Statistik Kota Padang.</p>
+                <p>© 2025 Bepeesaja. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</html>
