@@ -41,7 +41,7 @@
                     <label for="Dokumen" class="block text-sm font-medium mb-2">Dokumen</label>
                     <div class="flex items-center gap-3 max-w-full overflow-hidden">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" width="40" alt="PDF Icon">
-                        <a id="fileName" href="detail" class="text-blue-600 hover:underline truncate max-w-[calc(100%-50px)]">
+                        <a id="fileName" href="dokumen" class="text-blue-600 hover:underline truncate max-w-[calc(100%-50px)]">
                             KUINTANSI_00059-Biaya_Pengadaan_ARK_Belanja_Barang_Persediaan_Barang_Konsumsi_2024.pdf
                         </a>
                     </div>
@@ -99,5 +99,6 @@
 
     closePopup.addEventListener("click", function () {
         popupModal.classList.add("hidden");
+        window.location.href = 'daftar';
     });
 </script>

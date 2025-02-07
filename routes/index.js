@@ -40,4 +40,9 @@ router.get('/editkwitansi', function (req, res, next) {
   res.render('editkwitansi', { title: 'Edit Kwitansi' });
 });
 
+/* GET beranda page */
+router.get('/editakun', function (req, res, next) {
+  res.render('editakun', { title: 'Edit Akun' });
+});
+
 module.exports = router;

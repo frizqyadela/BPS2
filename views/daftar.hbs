@@ -123,3 +123,79 @@
             </table>
         </div>
     </div>
+
+   <!-- Delete Modal -->
+<div id="delete-modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center">
+    <div class="relative mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+        <div class="mt-3 text-center">
+            <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100">
+                <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+            </div>
+            <h3 class="text-lg leading-6 font-medium text-gray-900 mt-4">Konfirmasi Hapus</h3>
+            <div class="mt-2 px-7 py-3">
+                <p class="text-sm text-gray-500">
+                    Apakah Anda yakin ingin menghapus kwitansi ini? Tindakan ini tidak dapat dibatalkan.
+                </p>
+            </div>
+            <div class="flex justify-center gap-4 mt-4">
+                <button id="delete-confirm" class="px-4 py-2 bg-red-600 text-white text-base font-medium rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-300">
+                    Hapus
+                </button>
+                <button id="delete-cancel" class="px-4 py-2 bg-gray-100 text-gray-700 text-base font-medium rounded-lg hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300">
+                    Batal
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const deleteButtons = document.querySelectorAll('.bg-red-100.text-red-600');
+    const deleteModal = document.getElementById('delete-modal');
+    const deleteConfirm = document.getElementById('delete-confirm');
+    const deleteCancel = document.getElementById('delete-cancel');
+    let currentDeleteId = null;
+
+    // Show modal when delete button is clicked
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentDeleteId = button.closest('tr').querySelector('td:first-child').textContent;
+            deleteModal.classList.remove('hidden');
+        });
+    });
+
+    // Hide modal when cancel is clicked
+    deleteCancel.addEventListener('click', () => {
+        deleteModal.classList.add('hidden');
+        currentDeleteId = null;
+    });
+
+    // Handle delete confirmation
+    deleteConfirm.addEventListener('click', () => {
+        if (currentDeleteId) {
+            // Here you would typically make an API call to delete the item
+            console.log(`Deleting item ${currentDeleteId}`);
+            
+            // Remove the row from the table
+            const row = document.querySelector(`td:first-child`).closest('tr');
+            if (row) {
+                row.remove();
+            }
+        }
+        deleteModal.classList.add('hidden');
+        currentDeleteId = null;
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', (e) => {
+        if (e.target === deleteModal) {
+            deleteModal.classList.add('hidden');
+            currentDeleteId = null;
+        }
+    });
+});
+</script>
