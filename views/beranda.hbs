@@ -5,7 +5,8 @@
     <!-- Grid Layout -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Folder Item 1 -->
-        <div class="group relative flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 overflow-visible">
+        {{#each akunData}}
+            <div class="group relative flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 overflow-visible">
             <!-- Dropdown Toggle -->
             <button class="absolute top-2 right-2 p-1.5 rounded-lg hover:bg-gray-100 z-20" onclick="event.stopPropagation(); toggleDropdown('dropdown-521811')">
                 <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -14,7 +15,7 @@
             </button>
             <!-- Dropdown Menu -->
             <div id="dropdown-521811" class="hidden absolute top-10 right-2 z-30 bg-white rounded-lg shadow-lg border border-gray-200 py-2 w-36">
-                <a href="editakun" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onclick="event.stopPropagation()">
+                <a href="editakun/{{this.akun_id}}" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onclick="event.stopPropagation()">
                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
                     </svg>
@@ -28,7 +29,7 @@
                 </button>
             </div>
             <!-- Clickable Link Wrapper -->
-            <a href="daftar" class="flex-1 p-4 md:p-5">
+            <a href="daftar/{{this.akun_id}}" class="flex-1 p-4 md:p-5">
                 <div class="flex items-center gap-x-4">
                     <div class="bg-yellow-300 rounded-lg p-2">
                         <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -36,52 +37,13 @@
                         </svg>
                     </div>
                     <div>
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">521811</h3>
-                        <p class="text-sm text-gray-500">15 kwitansi</p>
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{this.nama_akun}}</h3>
+                        <p class="text-sm text-gray-500">{{this.jumlah_kwitansi}}</p>
                     </div>
                 </div>
             </a>
         </div>
-
-        <!-- Folder Item 2 -->
-        <div class="group relative flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 overflow-visible">
-            <!-- Dropdown Toggle -->
-            <button class="absolute top-2 right-2 p-1.5 rounded-lg hover:bg-gray-100 z-20" onclick="event.stopPropagation(); toggleDropdown('dropdown-521812')">
-                <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
-                </svg>
-            </button>
-            <!-- Dropdown Menu -->
-            <div id="dropdown-521812" class="hidden absolute top-10 right-2 z-30 bg-white rounded-lg shadow-lg border border-gray-200 py-2 w-36">
-                <a href="editakun" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onclick="event.stopPropagation()">
-                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
-                    </svg>
-                    Edit
-                </a>
-                <button class="flex items-center w-full px-4 py-2 text-sm text-red-600 hover:bg-gray-100 delete-btn" onclick="event.stopPropagation(); showDeleteModal('521812')">
-                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                    </svg>
-                    Hapus
-                </button>
-            </div>
-            <!-- Clickable Link Wrapper -->
-            <a href="daftar" class="flex-1 p-4 md:p-5">
-                <div class="flex items-center gap-x-4">
-                    <div class="bg-yellow-300 rounded-lg p-2">
-                        <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-white">521812</h3>
-                        <p class="text-sm text-gray-500">10 kwitansi</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-
+        {{/each}}
         <!-- Add more folder items as needed -->
     </div>
 

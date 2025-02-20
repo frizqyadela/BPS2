@@ -7,7 +7,7 @@ const process = require('process');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
-const db = {}; 
+const db = {};
 
 let sequelize;
 if (config.use_env_variable) {
@@ -39,5 +39,18 @@ Object.keys(db).forEach(modelName => {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+
+async function init() {
+  try {
+    await sequelize.authenticate();
+    console.log('Berhasil terhubung ke database');
+  } catch (error) {
+    console.log('Gagal terhubung ke database: ', error.message);
+    process.exit(1);
+  }
+}
+
+init();
+
 
 module.exports = db;
